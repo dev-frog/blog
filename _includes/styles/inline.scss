@@ -1,0 +1,42 @@
+$font-family-heading: {{ site.font_heading | default:"Roboto Slab, Helvetica, Arial, sans-serif" }};
+$font-family:         {{ site.font         | default:"Noto Sans, Helvetica, Arial, sans-serif"   }};
+$theme-color:         {{ site.theme_color  | default:'#193747' }};
+
+@import "variables";
+@import "my-variables";
+@import "mixins";
+
+@import "pooleparty/__inline__/base";
+@import "pooleparty/__inline__/type";
+@import "pooleparty/__inline__/table";
+@import "pooleparty/__inline__/footer";
+@import "pooleparty/__inline__/footnotes";
+@import "pooleparty/__inline__/code";
+@import "pooleparty/__inline__/posts";
+@import "pooleparty/__inline__/related";
+@import "pooleparty/__inline__/read-more";
+@import "pooleparty/__inline__/message";
+@import "pooleparty/__inline__/pagination";
+
+@import "hydejack/__inline__/base";
+@import "hydejack/__inline__/utilities";
+@import "hydejack/__inline__/links";
+@import "hydejack/__inline__/images";
+@import "hydejack/__inline__/sidebar";
+@import "hydejack/__inline__/social";
+@import "hydejack/__inline__/menu";
+@import "hydejack/__inline__/content";
+@import "hydejack/__inline__/avatar";
+@import "hydejack/__inline__/katex";
+@import "hydejack/__inline__/footer";
+
+@import "my-inline";
+
+html { font-family: $font-family; }
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6, .heading { font-family: $font-family-heading; }
+
+{% if site.hydejack.no_page_style %}
+  {% assign color       = site.accent_color | default:'#4fb1ba' %}
+  {% assign theme_color = site.theme_color  | default:'#193747' %}
+  {% include styles/page-style.scss color=color theme_color=theme_color %}
+{% endif %}
