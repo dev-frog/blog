@@ -5,6 +5,9 @@ description: >
   This tutorial will help you understand how to use the `find` command effectively in a CTF context. It is written in a way that you won’t have to refer to the man page to complete it, although I recommend the man page for further reading..
 ---
 
+# The find command
+
+
 ## Task 2
 
 ### Find all files whose name ends with ".xml"
