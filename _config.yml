@@ -22,8 +22,8 @@ author:
 
 # Add links to the sidebar.
 menu:
-  - title:             Hackthebox
-    url:               /hackthebox/
+  - title:             TryHackMe
+    url:               /tryhackme/
   - title:             CTF
     url:               /ctf/
   - title:             Vlunhub
