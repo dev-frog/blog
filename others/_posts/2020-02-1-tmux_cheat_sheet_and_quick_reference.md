@@ -5,13 +5,15 @@ description: >
   `tmux` lets you keep things running persistently on servers, so you can disconnect and connect as needed without interrupting tasks that are in progress.
 ---
 
-## start new:
+# Tmux cheat Sheet & Quick Reference
+
+## start new
 
 ```bash
 tmux
 ```
 
-## start new with session name:
+## start new with session name
 
 ```bash
 tmux new -s session_name
@@ -26,7 +28,7 @@ tmux ls
 ## Attach to named
 
 ```bash
-tmux a -t session_name 
+tmux a -t session_name
 ```
 
 ## Kill session
@@ -40,6 +42,7 @@ tmux kill-session -t session_name
 ```bash
 Ctrl+b $
 ```
+
 ## Detach from session
 
 ```bash
@@ -64,7 +67,7 @@ Ctrl+b ,
 Ctrl+b &
 ```
 
-## Previous windows 
+## Previous windows
 
 ```bash
 Ctrl+b p
@@ -107,7 +110,7 @@ Ctrl+b {
 ```
 
 ## Toggle between pane layout
-  
+
 ```bash
 Ctrl+b Spacebar
 ```
@@ -117,7 +120,3 @@ Ctrl+b Spacebar
 ```bash
 Ctrl+b o
 ```
-
-
-
-
