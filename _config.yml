@@ -12,7 +12,7 @@ tagline:  >
 
 keywords:      [ctf,hacking,progamming,malware]
 
-logo:          /assets/icons/icon_pic.jpg
+logo:          /assets/icons/profile.png
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
