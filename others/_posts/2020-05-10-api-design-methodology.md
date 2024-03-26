@@ -121,7 +121,9 @@ the document type is the conceptual base archetype of the other resource archety
 
 Each URI below identifies a document resource:
 `http://api.soccer.restapi.org/leagues/seattle`
+
 `http://api.soccer.restapi.org/leagues/seattle/teams/trebuchet`
+
 `http://api.soccer.restapi.org/leagues/seattle/teams/trebuchet/players/mike`
 
 #### Collection
@@ -133,7 +135,9 @@ and also decides the URIs of each contained resource.
 
 Each URI below identifies a collection resource:
 `http://api.soccer.restapi.org/leagues`
+
 `http://api.soccer.restapi.org/leagues/seattle/teams`
+
 `http://api.soccer.restapi.org/leagues/seattle/teams/trebuchet/players`
 
 #### Store
@@ -188,3 +192,74 @@ path segment. A collection’s name should be chosen to reflect what it uniforml
 For example, the URI for a collection of player documents uses the plural noun form
 of its contained resources:
 `http://api.soccer.restapi.org/leagues/seattle/teams/trebuchet/players`
+
+> Rule: A plural noun should be used for store names
+
+A URI identifying a store of resources should be named with a plural noun, or noun
+phrase, as its path segment. The URI for a store of music playlists may use the plural
+noun form as follows:
+
+`http://api.music.restapi.org/artists/mikemassedotcom/playlists`
+
+> Rule: A verb or verb phrase should be used for controller names
+
+Like a computer program’s function, a URI identifying a controller resource should be
+named to indicate its action. For example:
+
+`http://api.college.restapi.org/students/morgan/register`
+
+`http://api.example.restapi.org/lists/4324/dedupe`
+
+> Rule: Variable path segments may be substituted with identity-based values
+
+Some URI path segments are static; meaning they have fixed names that may be chosen
+by the REST API’s designer. Other URI path segments are variable, which means that
+they are automatically filled in with some identifier that may help provide the URI with
+its uniqueness. The URI Template syntax‡ allows designers to clearly name both the
+static and variable segments. A URI template includes variables that must be substituted
+before resolution. The URI template example below has three variables (leagueId,
+teamId, and playerId):
+
+`http://api.soccer.restapi.org/leagues/{leagueId}/teams/{teamId}/players/{playerId}`
+
+> Rule: CRUD function names should not be used in URIs
+
+URIs should not be used to indicate that a CRUD§ function is performed. URIs should
+be used to uniquely identify resources, and they should be named as described in the
+rules above. HTTP request methods should be used to indicate which CRUD function is performed.
+
+For example, this API interaction design is preferred:
+
+`DELETE /users/1234`
+
+The following anti-patterns exemplify what not to do:
+
+`GET /deleteUser?id=1234`
+
+`GET /deleteUser/1234`
+
+`DELETE /deleteUser/1234`
+
+`POST /users/1234/delete`
+
+
+### URI Query Design
+
+> Rule: The query component of a URI may be used to filter collections or stores
+
+A URI’s query component is a natural fit for supplying search criteria to a collection or
+store. Let’s take a look at an example:
+
+`GET /users`
+
+`GET /users?role=admin`
+
+> Rule: The query component of a URI should be used to paginate collection or store results
+
+A REST API client should use the query component to paginate collection and store
+results with the `pageSize` and `pageStartIndex` parameters. The `pageSize` parameter
+specifies the maximum number of contained elements to return in the response. The
+`pageStartIndex` parameter specifies the zero-based index of the first element to return
+in the response. For example:
+
+`GET /users?pageSize=25&pageStartIndex=50`
